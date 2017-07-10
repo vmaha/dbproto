@@ -27,10 +27,11 @@ export var Widget: React.StatelessComponent<Props> = (props: Props) => {
         height: heightPx,
         width: widthPx
     };
+    let lightbox = (props.height==1 && props.width==1) ? null  : <img src="/src/assets/widget-hover-view-full-screen-kanban.png"/>;
     return (        
         <div className="widget" style={style}>
             <div className="hover-commands">
-                <img src="/src/assets/widget-hover-view-full-screen-kanban.png"/>
+                { lightbox }
                 <img src="/src/assets/widget-hover-ellipsis-kanban.png"/>
             </div>
         </div>
