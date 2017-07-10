@@ -1,0 +1,28 @@
+header {
+    $row-height: 40px;
+    height: 2 * $row-height;
+    .snip {
+        position: absolute;
+        top: 0;
+        &.left {
+            left:0;
+        }
+        &.right {
+            right: 0;
+        }
+    }
+    .band {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: $row-height;
+        &.l1 {
+            top:0;
+            background: #0078d7;
+        }
+        &.l2 {
+            top: $row-height;
+            background: #f4f4f4;
+        }
+    }
+}
