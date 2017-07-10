@@ -1,0 +1,19 @@
+.widget {
+    position: absolute;
+    //border: 1px dashed black;
+    .hover-commands {
+        position: absolute;
+        top: 0;
+        right: 0;
+        img {
+            margin-top: 3px;
+            margin-right: 3px;
+        }
+        display: none;
+    }
+    &:hover {
+        .hover-commands {
+            display: block;
+        }
+    }
+}
