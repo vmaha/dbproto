@@ -1,6 +1,7 @@
 import * as React from "react";
 
-import { SampleData, WidgetData } from "../stores/SampleData";
+import { SampleData } from "../stores/SampleData";
+import { WidgetData } from "../models/WidgetData";
 import { Header } from "../components/Header";
 import { Widget } from "../components/Widget";
 

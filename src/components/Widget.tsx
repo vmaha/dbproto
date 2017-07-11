@@ -1,6 +1,8 @@
 import * as React from "react";
 
 import { Spinner } from "office-ui-fabric-react/lib/Spinner";
+import { WidgetData } from "../models/WidgetData";
+import { WidgetLoadType } from "../models/WidgetLoadType";
 
 import "./Widget.scss";
 import "file-loader!../assets/widget-hover-ellipsis-kanban.png";
@@ -19,7 +21,7 @@ export interface State {
     isLoading: boolean,
 }
 
-export class Widget extends React.Component<Props, State> {
+export class Widget extends React.Component<WidgetData, State> {
 
     private readonly cellLengthPx = 160;
     private readonly cellSpacingPx = 10;
@@ -60,7 +62,15 @@ export class Widget extends React.Component<Props, State> {
 
         let lightbox = (!this.props.showLightbox) ? null  : <img src="/src/assets/widget-hover-view-full-screen-kanban.png"/>;
 
-        let spinner = (!this.state.isLoading) ? null : <Spinner />;
+        let loadingElement: JSX.Element = null;
+
+        if (this.state.isLoading) {
+            switch (this.props.loadType) {
+                case WidgetLoadType.Spinner:
+                    loadingElement = <Spinner />;
+                    break;
+            }
+        }
 
         let className = 'widget';
         if (this.state.isLoading) {
@@ -73,7 +83,7 @@ export class Widget extends React.Component<Props, State> {
                     { lightbox }
                     <img src="/src/assets/widget-hover-ellipsis-kanban.png"/>
                 </div>
-                { spinner }
+                { loadingElement }
             </div>
         );
     }

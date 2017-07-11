@@ -17,7 +17,7 @@ render(
             <ScrollToTop />
             <Route exact path="/" component={Home} />
             <Route path="/ellipsis/:id" component={ Ellipsis } />            
-            <Route path="/loading/:id" component={ Loading } />
+            <Route path="/loading/:loader" component={ Loading } />
           </div>
         </BrowserRouter>
     ),

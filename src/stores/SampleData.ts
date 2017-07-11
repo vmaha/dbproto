@@ -1,13 +1,5 @@
+import { WidgetData } from "../models/WidgetData";
 
-
-export class WidgetData {
-    height: number;
-    width: number;
-    left: number;
-    top: number;
-    showLightbox?: boolean;
-    pretendToLoad?: boolean;
-}
 
 export class SampleData {
     getWidgetsData(sampleDashboard: number) : WidgetData[] {
