@@ -50,8 +50,6 @@
     "source-map-loader": "^0.2.1",
     "style-loader": "^0.18.2",
     "ts-loader": "^2.0.3",
-    // Temporarily using exact version of typescrip until this issue is resolved: 
-    // https://github.com/OfficeDev/office-ui-fabric-react/issues/2128
     "typescript": "2.3.4",
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.4.5",
