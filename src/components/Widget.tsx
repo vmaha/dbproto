@@ -11,7 +11,7 @@ export interface Props {
     width: number,
     left: number,
     top: number,
-    showLightbox: boolean,
+    showLightbox?: boolean,
     pretendToLoad?: boolean,
 }
 
