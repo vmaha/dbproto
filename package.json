@@ -37,6 +37,7 @@
     "mocha": "^3.4.2",
     "moment": "^2.15.1",
     "node-sass": "^4.5.2",
+    "office-ui-fabric-react": "^4.17.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-helmet": "^5.0.3",
