@@ -8,7 +8,8 @@ export interface Props {
     height: number,
     width: number,
     left: number,
-    top: number
+    top: number,
+    showLightbox: boolean
 }
 
 export var Widget: React.StatelessComponent<Props> = (props: Props) => {
@@ -27,7 +28,7 @@ export var Widget: React.StatelessComponent<Props> = (props: Props) => {
         height: heightPx,
         width: widthPx
     };
-    let lightbox = (props.height==1 && props.width==1) ? null  : <img src="/src/assets/widget-hover-view-full-screen-kanban.png"/>;
+    let lightbox = (!props.showLightbox) ? null  : <img src="/src/assets/widget-hover-view-full-screen-kanban.png"/>;
     return (        
         <div className="widget" style={style}>
             <div className="hover-commands">
