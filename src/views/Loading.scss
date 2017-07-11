@@ -1,0 +1,11 @@
+body {
+    background: #eaeaea;
+}
+main {
+    position: relative;
+    .edit-button {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+    }
+}

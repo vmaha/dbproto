@@ -1,3 +1,10 @@
+@mixin center-xy() {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
 .widget {
     position: absolute;
     //border: 1px dashed black;
@@ -15,5 +22,11 @@
         .hover-commands {
             display: block;
         }
+    }
+    &.loading {
+        background-color: white;
+    }
+    .ms-Spinner {
+        @include center-xy();
     }
 }

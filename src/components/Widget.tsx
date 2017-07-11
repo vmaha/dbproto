@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { Spinner } from "office-ui-fabric-react/lib/Spinner";
+
 import "./Widget.scss";
 import "file-loader!../assets/widget-hover-ellipsis-kanban.png";
 import "file-loader!../assets/widget-hover-view-full-screen-kanban.png";
@@ -9,32 +11,70 @@ export interface Props {
     width: number,
     left: number,
     top: number,
-    showLightbox: boolean
+    showLightbox: boolean,
+    pretendToLoad?: boolean,
 }
 
-export var Widget: React.StatelessComponent<Props> = (props: Props) => {
-    const cellLengthPx = 160;
-    const cellSpacingPx = 10;
-    const dashboardTopPx = 21;
-    const dashboardLeftPx = 24;
-    let getLengthPx = (i: number) => (cellSpacingPx + cellLengthPx) * i - cellSpacingPx;
-    let leftPx = dashboardLeftPx + getLengthPx(props.left) + cellSpacingPx;
-    let topPx =  dashboardTopPx + getLengthPx(props.top) + cellSpacingPx;
-    let heightPx = getLengthPx(props.height);    
-    let widthPx = getLengthPx(props.width);
-    let style = {
-        top: topPx,
-        left: leftPx,
-        height: heightPx,
-        width: widthPx
-    };
-    let lightbox = (!props.showLightbox) ? null  : <img src="/src/assets/widget-hover-view-full-screen-kanban.png"/>;
-    return (        
-        <div className="widget" style={style}>
-            <div className="hover-commands">
-                { lightbox }
-                <img src="/src/assets/widget-hover-ellipsis-kanban.png"/>
+export interface State {
+    isLoading: boolean,
+}
+
+export class Widget extends React.Component<Props, State> {
+
+    private readonly cellLengthPx = 160;
+    private readonly cellSpacingPx = 10;
+    private readonly dashboardTopPx = 20;
+    private readonly dashboardLeftPx = 25;   
+
+    constructor(props: Props) {
+        super(props);
+        this.state = { isLoading : props.pretendToLoad };
+    }
+
+    public componentDidMount() {
+        if (this.props.pretendToLoad) {            
+            setTimeout(
+                () => {
+                    this.setState({
+                        isLoading: false
+                    });
+                },
+                Math.random() * 5000
+            );
+        }
+    }
+
+    public render() {        
+
+        let getLengthPx = (i: number) => (this.cellSpacingPx + this.cellLengthPx) * i - this.cellSpacingPx;
+        let leftPx = this.dashboardLeftPx + getLengthPx(this.props.left) + this.cellSpacingPx;
+        let topPx =  this.dashboardTopPx + getLengthPx(this.props.top) + this.cellSpacingPx;
+        let heightPx = getLengthPx(this.props.height);    
+        let widthPx = getLengthPx(this.props.width);
+        let style = {
+            top: topPx,
+            left: leftPx,
+            height: heightPx,
+            width: widthPx
+        };
+
+        let lightbox = (!this.props.showLightbox) ? null  : <img src="/src/assets/widget-hover-view-full-screen-kanban.png"/>;
+
+        let spinner = (!this.state.isLoading) ? null : <Spinner />;
+
+        let className = 'widget';
+        if (this.state.isLoading) {
+            className += ' loading';
+        }
+
+        return (
+            <div className={ className } style={ style }>
+                <div className="hover-commands">
+                    { lightbox }
+                    <img src="/src/assets/widget-hover-ellipsis-kanban.png"/>
+                </div>
+                { spinner }
             </div>
-        </div>
-    );
+        );
+    }
 }
