@@ -6,9 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --progress",
     "build-dev": "webpack --env.dev",
-    "build-prod": "webpack --env.prod",
-    "test": "karma start",
-    "test-watch": "karma start --single-run=false"
+    "build-prod": "webpack --env.prod"
   },
   "author": "vivek maharajh",
   "license": "ISC",
