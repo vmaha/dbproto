@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";
 
 import { Home } from "./views/Home";
-import { Loading } from "./views/Loading";
+import { Ellipsis } from "./views/Ellipsis";
 
 import { ScrollToTop } from "./components/ScrollToTop";
 
@@ -15,7 +15,7 @@ render(
           <div>
             <ScrollToTop />
             <Route exact path="/" component={Home} />
-            <Route path="/loading/:id" component={ Loading } />            
+            <Route path="/ellipsis/:id" component={ Ellipsis } />            
           </div>
         </BrowserRouter>
     ),
