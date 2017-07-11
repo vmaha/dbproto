@@ -31,6 +31,7 @@ export var Loading = (props: RouteComponentProps<any>) => {
                 <Widget height={1} width={2} left={0} top={3}></Widget>
                 <Widget height={2} width={3} left={2} top={2}></Widget>
                 <Widget height={2} width={3} left={5} top={2}></Widget>
+                <Widget height={2} width={3} left={0} top={4}></Widget>
                 <img className="edit-button" src="/src/assets/dashboard-edit.png"/>
             </main>
         </div>
