@@ -4,8 +4,6 @@ import { RouteComponentProps } from "react-router";
 import { Dashboard } from "../components/Dashboard";
 import { SampleData } from "../stores/SampleData";
 
-import "./Ellipsis.scss";
-
 export var Ellipsis = (props: RouteComponentProps<any>) => {
     
     let id = props.match.params.id;

@@ -4,8 +4,6 @@ import { RouteComponentProps } from "react-router";
 import { Dashboard } from "../components/Dashboard";
 import { SampleData } from "../stores/SampleData";
 
-import "./Loading.scss";
-
 export var Loading = (props: RouteComponentProps<any>) => {
     
     let id = props.match.params.id;
