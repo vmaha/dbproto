@@ -13,7 +13,7 @@ export class Home extends React.Component<Props, State> {
     public render() {        
         return (
             <main className="body-container">
-                <h1>Pebble Prototypes</h1>
+                <h1>Compass Prototypes</h1>
                 <h2>Ellipsis</h2>
                 <p>Buttons that show up on widget hover collide with new widget elements</p>
                 <p><Link to="/ellipsis/1">Variant 1</Link>&nbsp;— Kanban board design</p>
