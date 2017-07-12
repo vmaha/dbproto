@@ -3,6 +3,7 @@ import * as React from "react";
 import "./ResizeConfig.scss";
 
 import { SizePicker } from "./SizePicker";
+import { GridSizePicker } from "./GridSizePicker";
 
 import { SampleData } from "../stores/SampleData";
 
@@ -55,6 +56,12 @@ export var ResizeConfig: React.StatelessComponent<Props> = (props: Props) => {
                             <span>Height</span>
                             <SizePicker className={`size-picker-${props.variant}-2`} options={sampleData.get1DSizeOptions()} />
                         </div>
+                    </div>
+                break;
+            case "6":
+                resize = 
+                    <div className={`size-picker-${props.variant}`}>
+                        <GridSizePicker validSizes={sampleData.getValidSizes()} />
                     </div>
                 break;
         }
