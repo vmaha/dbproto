@@ -1,3 +1,5 @@
+@import "../transitions";
+
 .overlay {
     position: absolute;
     background-color: #212121;
@@ -106,10 +108,6 @@ $grid-cell-padding: 3px;
         outline: 1px solid #dadada;
         box-shadow: 0 1px 3px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.04);
 
-        &.hide {
-            display: none;
-        }
-
         td {
             width: $grid-cell-side-length;
             height: $grid-cell-side-length;
@@ -122,15 +120,61 @@ $grid-cell-padding: 3px;
             }
 
             &.disabled div {
-                background-color: lightcoral;
+                background-color: #FFCCCC;
             }
 
-            &.highlight div {
-                outline: 1px solid #0078d7;
-                border: 1px solid #e6f1fb;
+            &.highlight{
+                &:not(.disabled) {
+                    div {
+                        cursor: pointer;
+                    }
+                }
+            } 
+
+        }
+    }
+
+    .table-container {        
+        &.hide {
+            display: none;
+        }
+        position: relative;
+    }
+}
+
+.grid-size-picker:not(.preview-box) {
+    table {
+        td {
+            &.highlight {
+                div {
+                    outline: 1px solid #0078d7;
+                    border: 1px solid #e6f1fb;
+                    box-sizing: border-box;
+                }
+            }
+        }
+    }
+}
+
+.grid-size-picker.preview-box {    
+    .preview {            
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        outline: 1px solid #0078d7;
+        background: rgba(230,241,251, 0.5);
+        box-sizing: border-box;
+        pointer-events: none;
+        transition: width $transition-function, height $transition-function;
+    }
+    table {
+        td:hover { 
+            div {            
+                outline: 1px solid #ef4810;
+                border: 1px solid #ffe294;
                 box-sizing: border-box;
             }
         }
     }
-
 }

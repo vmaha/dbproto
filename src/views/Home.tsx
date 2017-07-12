@@ -43,7 +43,9 @@ export class Home extends React.Component<Props, State> {
                 <Variant url="/resize/3" name="D" description="2 pickers with labels"/>
                 <Variant url="/resize/4" name="E" description="2 pickers with alt labels"/>
                 <Variant url="/resize/6" name="F" description="Grid"/>
-                <Variant url="/resize/6-no-invalid" name="F" description="Same as ☝️ without invalid sizes"/>
+                <Variant url="/resize/6-no-invalid" name="G" description="Same as ☝️ without invalid sizes"/>
+                <Variant url="/resize/6-preview-box" name="H" description="Grid with preview box"/>
+                <Variant url="/resize/6-no-invalid-preview-box" name="I" description="Same as ☝️ without invalid sizes"/>
             </main>
         );
     }

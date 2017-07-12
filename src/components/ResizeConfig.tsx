@@ -70,6 +70,18 @@ export var ResizeConfig: React.StatelessComponent<Props> = (props: Props) => {
                         <GridSizePicker validSizes={sampleData.getAllValidSizes()} />
                     </div>
                 break;
+            case "6-preview-box":
+                resize = 
+                    <div className={`size-picker-6`}>
+                        <GridSizePicker validSizes={sampleData.getValidSizes()} usePreviewBox={true}/>
+                    </div>
+                break;
+            case "6-no-invalid-preview-box":
+                resize = 
+                    <div className={`size-picker-6`}>
+                        <GridSizePicker validSizes={sampleData.getAllValidSizes()} usePreviewBox={true} />
+                    </div>
+                break;
         }
     }
 

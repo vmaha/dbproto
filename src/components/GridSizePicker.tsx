@@ -5,6 +5,7 @@ import "./ResizeConfig.scss";
 
 export interface Props {
     validSizes: Size[];
+    usePreviewBox?: boolean;
 }
 
 export interface State {
@@ -37,6 +38,11 @@ export class GridSizePicker extends React.Component<Props, State> {
             .map(size => size.height)
             .reduce((prev, cur) => Math.max(prev, cur));
 
+        let sizeAsString = this.state.hoverValue ? this.state.hoverValue : 
+                        this.state.value ? this.state.value :
+                        undefined;
+        let size = this.stringToSize(sizeAsString);
+
         let rows: JSX.Element[] = [];
         for (let i = 1; i <= maxWidth; ++i) {
             let rowCells: JSX.Element[] = [];
@@ -55,10 +61,6 @@ export class GridSizePicker extends React.Component<Props, State> {
                 let topHighlight = "";
                 let bottomHighlight = "";
 
-                let sizeValue = this.state.hoverValue ? this.state.hoverValue : 
-                                this.state.value ? this.state.value :
-                                undefined;
-                let size = this.stringToSize(sizeValue);
                 if (size != null) {
                     if (i <= size.width && j <= size.height) {
                         highlight = "highlight";
@@ -71,16 +73,11 @@ export class GridSizePicker extends React.Component<Props, State> {
                 rowCells.push(
                     <td key={value}
                         onMouseOver={(e) => {
-                            this.setState({
-                                value: this.state.value,
-                                showTable: this.state.showTable,
-                                hoverValue: value
-                            });
-                        }}
-                        onMouseLeave={(e) => {
-                            this.setState({
-                                hoverValue: null,
-                            })
+                            if (validSize) {
+                                this.setState({
+                                    hoverValue: value
+                                });
+                            }
                         }}
                         className={className}
                         onClick={() => {
@@ -103,27 +100,47 @@ export class GridSizePicker extends React.Component<Props, State> {
 
         let tableClassName = this.state.showTable ? "" : "hide";
 
-        let inputValue = this.state.hoverValue ? this.state.hoverValue : this.state.value;
+        let gridCellLengthPx = 15;
+        let gridCellPaddingPx = 3;
+        let getPreviewLengthPx = (length: number) => {
+            let spaceBetween = 2 * gridCellPaddingPx;
+            let lengthPx = length * (gridCellLengthPx + spaceBetween) ;
+            return `${lengthPx}px`;
+        };
+        let previewStyle = {
+            width: getPreviewLengthPx(size.height),
+            height: getPreviewLengthPx(size.width),
+        };
+
+        let className = "grid-size-picker";
+        let previewElement = null;
+        if (this.props.usePreviewBox) {
+            className += " preview-box";
+            previewElement = <div className="preview" style={previewStyle}></div>;
+        }
 
         return (
-            <div className="grid-size-picker">
+            <div className={className}>
                 <input
-                    value={inputValue}
+                    value={ sizeAsString }
                     onClick={(ev) => {
                         this.setState({ value: this.state.value, showTable: !this.state.showTable });
                         (ev.target as any).blur();
                     }}
                     onChange={(e) => this.setState({ value: e.target.value })}
                 />
-                <table
-                    onMouseLeave={() => {
-                        this.setState({
-                            hoverValue: null
-                        });
-                    }}
-                    className={tableClassName}>
-                    <tbody>{...rows}</tbody>
-                </table>
+                <div className={`table-container ${tableClassName}`}>
+                    <table                    
+                        onMouseLeave = {() => {
+                            this.setState({
+                                hoverValue: null
+                            });
+                        }}
+                        className={tableClassName}>
+                        <tbody>{...rows}</tbody>
+                    </table>
+                    { previewElement }
+                </div>
             </div>
         );
     }
