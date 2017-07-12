@@ -1,8 +1,27 @@
+html {
+    height: 100%;
+}
+
 body {
     background: #eaeaea;
+    height: 100%;
 }
+
+#content {
+    height: 100%;
+
+    & > div {
+        height: 100%;
+
+        & > div {
+            height: 100%;
+        }
+    }
+}
+
 main {
     position: relative;
+    height: calc(100% - 80px);
     .edit-button {
         position: fixed;
         right: 0;

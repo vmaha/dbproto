@@ -34,6 +34,13 @@ export class Home extends React.Component<Props, State> {
                 <Variant url="/loading/spinner" name="A" description="Using fabric spinner"/>
                 <Variant url="/loading/fixed-image" name="B" description="Using a small fixed image"/>
                 <Variant url="/loading/scaled-image" name="C" description="Using a scaled image"/>
+                <h2>Resize</h2>
+                <p>Super size me!</p>
+                <Variant url="/resize/1" name="A" description="Original"/>
+                <Variant url="/resize/2" name="B" description="2 pickers separated by 'x'"/>
+                <Variant url="/resize/5" name="C" description="2 pickers stacked"/>                
+                <Variant url="/resize/3" name="D" description="2 pickers with labels"/>
+                <Variant url="/resize/4" name="E" description="2 pickers with alt labels"/>
             </main>
         );
     }

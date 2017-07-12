@@ -1,0 +1,89 @@
+.overlay {
+    position: absolute;
+    background-color: #212121;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.resize-config {
+    position: absolute;
+    right: 0;
+    background-color: white;
+    height: 100%;
+
+    img {
+        display: block;
+    }
+
+    .config1,
+    .config2 {
+        position: relative;
+    }
+
+    .config3 {
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+.size-picker-container {
+    position: relative;
+    margin-left: 16px;
+    margin-bottom: 20px;
+
+    * {
+        font-family: "Segoe UI";
+        font-size: 14px;
+    }
+}
+
+.size-picker {
+    padding-left: 8px;
+    padding-right: 8px;
+    border: 1px solid #dadada;
+    height: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.size-picker-1 {
+    width: 398px;
+    margin-left: 0;
+}
+
+.size-picker-2 .size-picker {
+    width: 186px;
+
+    &.size-picker-2-1 {
+        margin-left: 0;
+    }
+}
+
+.size-picker-3 .size-picker {
+    width: 145px;
+}
+
+.size-picker-4 .size-picker {
+    width: 180px;
+    margin-right: 4px;
+
+    &.size-picker-4-1 {
+        margin-left: 0;
+    }
+}
+
+.size-picker-5 {
+    > div {
+        margin-bottom: 14px;
+    }
+
+    .size-picker {
+        width: 343px;
+    }
+
+    span {
+        display: inline-block;
+        min-width: 45px;
+    }
+}
