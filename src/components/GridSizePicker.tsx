@@ -81,6 +81,11 @@ export class GridSizePicker extends React.Component<Props, State> {
                                 hoverValue: value
                             });
                         }}
+                        onMouseLeave={(e) => {
+                            this.setState({
+                                hoverValue: null,
+                            })
+                        }}
                         className={className}
                         onClick={() => {
                             if (validSize) {
@@ -102,13 +107,16 @@ export class GridSizePicker extends React.Component<Props, State> {
 
         let tableClassName = this.state.showTable ? "" : "hide";
 
+        let inputValue = this.state.hoverValue ? this.state.hoverValue : this.state.value;
+
         return (
             <div className="grid-size-picker">
                 <input
-                    value={this.state.value}
-                    onClick={() => {
-                        this.setState({ value: this.state.value, showTable: !this.state.showTable })}
-                    }
+                    value={inputValue}
+                    onClick={(ev) => {
+                        this.setState({ value: this.state.value, showTable: !this.state.showTable });
+                        (ev.target as any).blur();
+                    }}
                     onChange={(e) => this.setState({ value: e.target.value })}
                 />
                 <table
