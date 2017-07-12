@@ -27,8 +27,8 @@ export class Home extends React.Component<Props, State> {
                 <h1>Compass Prototypes</h1>
                 <h2>Ellipsis</h2>
                 <p>Buttons that show up on widget hover collide with new widget elements</p>
-                <Variant url="/ellipsis/1" name="A" description="Kanban board design"/>
-                <Variant url="/ellipsis/2" name="B" description="Ibiza design"/>
+                <Variant url="/ellipsis/kanban" name="A" description="Kanban board design"/>
+                <Variant url="/ellipsis/ibiza" name="B" description="Ibiza design"/>
                 <h2>Loading</h2>
                 <p>Loading animations could do with some 💙</p>
                 <Variant url="/loading/spinner" name="A" description="Using fabric spinner"/>

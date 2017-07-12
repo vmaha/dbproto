@@ -3,6 +3,7 @@ import * as React from "react";
 import { Spinner, SpinnerSize } from "office-ui-fabric-react/lib/Spinner";
 import { WidgetData } from "../models/WidgetData";
 import { WidgetLoadType } from "../models/WidgetLoadType";
+import { WidgetButtonType } from "../models/WidgetButtonType";
 import { Glyph } from "./Glyph";
 
 import "./Widget.scss";
@@ -77,6 +78,7 @@ export class Widget extends React.Component<WidgetData, State> {
         if (this.state.isLoading) {
             className += ' loading';
         }
+        className += ` ${WidgetButtonType[this.props.buttonType]}`;
 
         return (
             <div className={ className } style={ style }>

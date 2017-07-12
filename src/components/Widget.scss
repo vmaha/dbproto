@@ -36,4 +36,21 @@
     .ms-Spinner {
         @include center-xy();
     }
+    &.Ibiza {
+        &:hover {
+            outline: 2px solid #c7e0f4;
+        }
+        .hover-commands {
+            background: #c7e0f4;
+            width: calc(100% + 4px);
+            top:0;
+            transform: translate(2px, -100%);
+            text-align: right;
+            .glyph {
+                border: none;
+                background: none;
+                margin: 0 5px 0 0;
+            }
+        }
+    }
 }

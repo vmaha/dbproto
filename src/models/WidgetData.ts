@@ -1,4 +1,5 @@
 import { WidgetLoadType } from "./WidgetLoadType";
+import { WidgetButtonType } from "./WidgetButtonType";
 
 export class WidgetData {
     height: number;
@@ -7,5 +8,6 @@ export class WidgetData {
     top: number;
     showLightbox?: boolean;
     pretendToLoad?: boolean;    
-    loadType?: WidgetLoadType
+    loadType?: WidgetLoadType;
+    buttonType?: WidgetButtonType;
 }
