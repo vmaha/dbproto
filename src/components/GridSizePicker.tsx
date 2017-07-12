@@ -55,18 +55,14 @@ export class GridSizePicker extends React.Component<Props, State> {
                 let topHighlight = "";
                 let bottomHighlight = "";
 
-                let hoverSize = (this.state.hoverValue != null) ? this.stringToSize(this.state.hoverValue) : undefined;
-                if (hoverSize != null) {
-                    if (i <= hoverSize.width && j <= hoverSize.height)
+                let sizeValue = this.state.hoverValue ? this.state.hoverValue : 
+                                this.state.value ? this.state.value :
+                                undefined;
+                let size = this.stringToSize(sizeValue);
+                if (size != null) {
+                    if (i <= size.width && j <= size.height) {
                         highlight = "highlight";
-                    if (i === 0)
-                        leftHighlight = "left-highlight";
-                    if (i === hoverSize.width)
-                        rightHighlight = "right-highlight";
-                    if (j === 0)
-                        topHighlight = "top-highlight";
-                    if (j === hoverSize.height)
-                        bottomHighlight = "bottom-highlight";
+                    }
                 }
 
                 let className = `${disabled} ${selected} ${highlight} ${leftHighlight} ${rightHighlight} ${topHighlight} ${bottomHighlight}`;
@@ -122,8 +118,6 @@ export class GridSizePicker extends React.Component<Props, State> {
                 <table
                     onMouseLeave={() => {
                         this.setState({
-                            value: this.state.value,
-                            showTable: this.state.showTable,
                             hoverValue: null
                         });
                     }}

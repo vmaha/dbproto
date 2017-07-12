@@ -64,6 +64,12 @@ export var ResizeConfig: React.StatelessComponent<Props> = (props: Props) => {
                         <GridSizePicker validSizes={sampleData.getValidSizes()} />
                     </div>
                 break;
+            case "6-no-invalid":
+                resize = 
+                    <div className={`size-picker-6`}>
+                        <GridSizePicker validSizes={sampleData.getAllValidSizes()} />
+                    </div>
+                break;
         }
     }
 
