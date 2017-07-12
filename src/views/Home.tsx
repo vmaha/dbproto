@@ -28,14 +28,15 @@ export class Home extends React.Component<Props, State> {
                 <h2>Ellipsis</h2>
                 <p>Buttons that show up on widget hover collide with new widget elements</p>
                 <Variant url="/ellipsis/kanban" name="A" description="Kanban board design"/>
-                <Variant url="/ellipsis/ibiza" name="B" description="Ibiza design"/>
+                <Variant url="/ellipsis/kanban-no-spaces" name="B" description="Same as ☝️ with a touch of polish"/>
+                <Variant url="/ellipsis/ibiza" name="C" description="Ibiza design"/>
                 <h2>Loading</h2>
                 <p>Loading animations could do with some 💙</p>
                 <Variant url="/loading/spinner" name="A" description="Using fabric spinner"/>
                 <Variant url="/loading/fixed-image" name="B" description="Using a small fixed image"/>
                 <Variant url="/loading/scaled-image" name="C" description="Using a scaled image"/>
                 <h2>Resize</h2>
-                <p>Super size me!</p>
+                <p>🍔 Super size me! 🍟</p>
                 <Variant url="/resize/1" name="A" description="Original"/>
                 <Variant url="/resize/2" name="B" description="2 pickers separated by 'x'"/>
                 <Variant url="/resize/5" name="C" description="2 pickers stacked"/>                

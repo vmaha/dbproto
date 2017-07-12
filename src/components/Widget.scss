@@ -53,4 +53,16 @@
             }
         }
     }
+    &.KanbanNoSpaces {
+        .hover-commands {
+            box-shadow: 0 1px 3px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.04);
+            background: #eff6fc;
+            top: 3px;
+            right: 3px;
+            .glyph {
+                border: none;
+                margin: 3px; 
+            }
+        }
+    }
 }

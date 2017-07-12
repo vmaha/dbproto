@@ -11,6 +11,7 @@ export var Ellipsis = (props: RouteComponentProps<any>) => {
 
     let idToButtonType: {[index:string]: WidgetButtonType } = {
         'kanban': WidgetButtonType.Kanban,
+        'kanban-no-spaces': WidgetButtonType.KanbanNoSpaces,
         'ibiza':  WidgetButtonType.Ibiza,
     };
     let buttonType = idToButtonType[id];
