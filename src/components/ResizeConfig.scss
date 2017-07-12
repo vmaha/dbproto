@@ -169,11 +169,16 @@ $grid-cell-padding: 3px;
         transition: width $transition-function, height $transition-function;
     }
     table {
-        td:hover { 
-            div {            
-                outline: 1px solid #ef4810;
-                border: 1px solid #ffe294;
-                box-sizing: border-box;
+        td {
+            &:hover { 
+                div {            
+                    outline: 1px solid #ef4810;
+                    border: 1px solid #ffe294;
+                    box-sizing: border-box;
+                }
+            }
+            &.disabled div {
+                display: none;
             }
         }
     }
