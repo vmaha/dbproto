@@ -12,9 +12,16 @@
         position: absolute;
         top: 0;
         right: 0;
-        img {
-            margin-top: 3px;
-            margin-right: 3px;
+        .glyph {
+            background: #eff6fc;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            width: 24px;
+            display: inline-block;
+            border: 1px solid #c7e0f4;
+            margin: 3px 3px 0 0;
+            cursor: pointer;
         }
         display: none;
     }

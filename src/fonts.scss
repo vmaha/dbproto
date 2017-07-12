@@ -1,5 +1,10 @@
 @import "./responsive";
 
+@font-face {
+    font-family: Bowtie;
+    src:url('https://cdn.vsassets.io/v/20170711T173611/_content/Fonts/Icons/bowtie.woff') format('woff');
+}
+
 // weight
 @mixin font-weight-light() {
     font-weight: 300;

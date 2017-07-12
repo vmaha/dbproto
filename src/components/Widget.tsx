@@ -1,8 +1,9 @@
 import * as React from "react";
 
-import { Spinner } from "office-ui-fabric-react/lib/Spinner";
+import { Spinner, SpinnerSize } from "office-ui-fabric-react/lib/Spinner";
 import { WidgetData } from "../models/WidgetData";
 import { WidgetLoadType } from "../models/WidgetLoadType";
+import { Glyph } from "./Glyph";
 
 import "./Widget.scss";
 import "file-loader!../assets/widget-hover-ellipsis-kanban.png";
@@ -60,14 +61,14 @@ export class Widget extends React.Component<WidgetData, State> {
             width: widthPx
         };
 
-        let lightbox = (!this.props.showLightbox) ? null  : <img src="/src/assets/widget-hover-view-full-screen-kanban.png"/>;
+        let lightbox = (!this.props.showLightbox) ? null  : <Glyph name="bowtie-view-full-screen" />
 
         let loadingElement: JSX.Element = null;
 
         if (this.state.isLoading) {
             switch (this.props.loadType) {
                 case WidgetLoadType.Spinner:
-                    loadingElement = <Spinner />;
+                    loadingElement = <Spinner size={ SpinnerSize.large }/>;
                     break;
             }
         }
@@ -80,8 +81,8 @@ export class Widget extends React.Component<WidgetData, State> {
         return (
             <div className={ className } style={ style }>
                 <div className="hover-commands">
-                    { lightbox }
-                    <img src="/src/assets/widget-hover-ellipsis-kanban.png"/>
+                    { lightbox }                    
+                    <Glyph name="bowtie-ellipsis" />
                 </div>
                 { loadingElement }
             </div>
