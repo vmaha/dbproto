@@ -27,19 +27,22 @@ export class Home extends React.Component<Props, State> {
                 <h1>Compass Prototypes</h1>
                 <h2>Ellipsis</h2>
                 <p>Buttons that show up on widget hover collide with new widget elements</p>
-                <Variant url="/ellipsis/kanban" name="A" description="Kanban board design"/>
-                <Variant url="/ellipsis/kanban-no-spaces" name="B" description="Same as ☝️ with a touch of polish"/>
-                <Variant url="/ellipsis/ibiza" name="C" description="Ibiza design"/>
+                <Variant url="/ellipsis/kanban" name="A1" description="Kanban board design"/>
+                <Variant url="/ellipsis/kanban-no-spaces" name="A2" description="Same as ☝️ with a touch of polish"/>
+                <Variant url="/ellipsis/ibiza" name="B1" description="Ibiza design"/>
+                <Variant url="/ellipsis/ibiza-thick-outline" name="B2" description="Ibiza with thicker outline"/>
+                <Variant url="/ellipsis/ibiza-super-thick-outline" name="B3" description="Ibiza with super thick outline"/>
+                <Variant url="/ellipsis/ibiza-no-outline" name="B4" description="Ibiza with no outline"/>
                 <h2>Loading</h2>
                 <p>Loading animations could do with some 💙</p>
-                <Variant url="/loading/spinner" name="A" description="Using fabric spinner"/>
-                <Variant url="/loading/spinner-with-name" name="B" description="Spinner and user given name"/>
-                <Variant url="/loading/spinner-with-catalog-name" name="C" description="Spinner and catalog name"/>
-                <Variant url="/loading/spinner-with-mixed-name" name="D" description="Spinner and user given name, or catalog name if title isn't configurable"/>
-                <Variant url="/loading/fixed-image" name="E" description="Using a small fixed image"/>
-                <Variant url="/loading/fixed-image-with-name" name="F" description="Fixed image and user given name"/>
-                <Variant url="/loading/fixed-image-with-catalog-name" name="G" description="Fixed image and catalog name"/>
-                <Variant url="/loading/fixed-image-with-mixed-name" name="H" description="Fixed image and user given name, or catalog name if title isn't configurable"/>
+                <Variant url="/loading/spinner" name="A1" description="Using fabric spinner"/>
+                <Variant url="/loading/spinner-with-name" name="A2" description="Spinner and user given name"/>
+                <Variant url="/loading/spinner-with-catalog-name" name="A3" description="Spinner and catalog name"/>
+                <Variant url="/loading/spinner-with-mixed-name" name="A4" description="Spinner and user given name, or catalog name if title isn't configurable"/>
+                <Variant url="/loading/fixed-image" name="B1" description="Using a small fixed image"/>
+                <Variant url="/loading/fixed-image-with-name" name="B2" description="Fixed image and user given name"/>
+                <Variant url="/loading/fixed-image-with-catalog-name" name="B3" description="Fixed image and catalog name"/>
+                <Variant url="/loading/fixed-image-with-mixed-name" name="B4" description="Fixed image and user given name, or catalog name if title isn't configurable"/>
                 <h2>Resize</h2>
                 <p>🍔 Super size me! 🍟</p>
                 <Variant url="/resize/1" name="A" description="Original"/>

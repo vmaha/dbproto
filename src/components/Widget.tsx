@@ -67,7 +67,7 @@ export class Widget extends React.Component<WidgetProps, State> {
             width: widthPx
         };
 
-        let lightbox = (!this.props.showLightbox) ? null  : <Glyph name="bowtie-view-full-screen" />
+        let lightbox = (!this.props.showLightbox) ? null : <Glyph name="bowtie-view-full-screen" />
 
         let loadingElement: JSX.Element = null;
         let loadingName: JSX.Element = null;

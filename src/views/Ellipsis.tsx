@@ -13,6 +13,9 @@ export var Ellipsis = (props: RouteComponentProps<any>) => {
         'kanban': WidgetButtonType.Kanban,
         'kanban-no-spaces': WidgetButtonType.KanbanNoSpaces,
         'ibiza':  WidgetButtonType.Ibiza,
+        'ibiza-thick-outline':  WidgetButtonType.IbizaThickOutline,
+        'ibiza-super-thick-outline':  WidgetButtonType.IbizaSuperThickOutline,
+        'ibiza-no-outline':  WidgetButtonType.IbizaNoOutline,
     };
     let buttonType = idToButtonType[id];
 
