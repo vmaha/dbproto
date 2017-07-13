@@ -1,0 +1,11 @@
+.body-container {
+    height: auto;
+    &.hide-abandoned {
+        .variant.archived {
+            display: none;
+        }
+    }
+    input {
+        margin-top: 4em;
+    }
+}
