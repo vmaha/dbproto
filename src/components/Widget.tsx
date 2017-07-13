@@ -22,6 +22,7 @@ export class WidgetProps {
     buttonType?: WidgetButtonType;
     loadingName?: string;
     fixedLoadingImage: string;
+    useParallelogramForIbiza?: boolean;
 }
 
 export interface State {
@@ -96,6 +97,10 @@ export class Widget extends React.Component<WidgetProps, State> {
             className += ' loading';
         }
         className += ` ${WidgetButtonType[this.props.buttonType]}`;
+
+        if (this.props.useParallelogramForIbiza) {
+            className += " parallelogram";
+        }
 
         return (
             <div className={ className } style={ style }>

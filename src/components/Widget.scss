@@ -6,6 +6,8 @@
 }
 
 .widget {
+    $hover-commands-height: 24px;
+
     position: absolute;
     //border: 1px dashed black;
     .hover-commands {
@@ -14,10 +16,10 @@
         right: 0;
         .glyph {
             background: #eff6fc;
-            height: 24px;
-            line-height: 24px;
+            height: $hover-commands-height;
+            line-height: $hover-commands-height;
             text-align: center;
-            width: 24px;
+            width: $hover-commands-height;
             display: inline-block;
             border: 1px solid #c7e0f4;
             margin: 3px 3px 0 0;
@@ -114,6 +116,28 @@
         .hover-commands {
             width: 100%;
             transform: translate($outline-thickness, -100%);
+        }
+    }
+
+    &.parallelogram {
+        &.Ibiza,
+        &.IbizaThickOutline,
+        &.IbizaSuperThickOutline,
+        &.IbizaNoOutline {
+            .hover-commands {
+                width: 66%;
+
+                &::before {
+                    content: '';
+                    transform: skewX(-45deg);
+                    transform-origin: bottom;
+                    position: absolute;
+                    background-color: #0078D7;
+                    width: $hover-commands-height;
+                    height: $hover-commands-height;
+                    left: -$hover-commands-height;
+                }
+            }
         }
     }
 

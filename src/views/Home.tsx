@@ -33,6 +33,10 @@ export class Home extends React.Component<Props, State> {
                 <Variant url="/ellipsis/ibiza-thick-outline" name="B2" description="Ibiza with thicker outline"/>
                 <Variant url="/ellipsis/ibiza-super-thick-outline" name="B3" description="Ibiza with super thick outline"/>
                 <Variant url="/ellipsis/ibiza-no-outline" name="B4" description="Ibiza with no outline"/>
+                <Variant url="/ellipsis/ibiza-parallelogram" name="C1" description="Ibiza but with a tab-like look"/>
+                <Variant url="/ellipsis/ibiza-thick-outline-parallelogram" name="C2" description="Ibiza but with a tab-like look and thicker outline"/>
+                <Variant url="/ellipsis/ibiza-super-thick-outline-parallelogram" name="C3" description="Ibiza but with a tab-like look and super thick outline"/>
+                <Variant url="/ellipsis/ibiza-no-outline-parallelogram" name="C4" description="Ibiza but with a tab-like look and no outline"/>
                 <h2>Loading</h2>
                 <p>Loading animations could do with some 💙</p>
                 <Variant url="/loading/spinner" name="A1" description="Using fabric spinner"/>

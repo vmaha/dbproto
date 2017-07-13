@@ -13,4 +13,5 @@ export class WidgetData {
     name?: string;
     type?: string;
     fixedLoadingImage: string;
+    useParallelogramForIbiza?: boolean;
 }
