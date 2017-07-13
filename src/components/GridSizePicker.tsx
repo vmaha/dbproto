@@ -30,13 +30,9 @@ export class GridSizePicker extends React.Component<Props, State> {
     }
 
     public render() {
-        let maxWidth = this.props.validSizes
-            .map(size => size.width)
-            .reduce((prev, cur) => Math.max(prev, cur));
+        let maxWidth = 10;
 
-        let maxHeight = this.props.validSizes
-            .map(size => size.height)
-            .reduce((prev, cur) => Math.max(prev, cur));
+        let maxHeight = 10;
 
         let sizeAsString = this.state.hoverValue ? this.state.hoverValue : 
                         this.state.value ? this.state.value :
