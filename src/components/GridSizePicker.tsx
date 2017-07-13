@@ -101,7 +101,7 @@ export class GridSizePicker extends React.Component<Props, State> {
         let tableClassName = this.state.showTable ? "" : "hide";
 
         let gridCellLengthPx = 15;
-        let gridCellPaddingPx = 3;
+        let gridCellPaddingPx = 2;
         let getPreviewLengthPx = (length: number) => {
             let spaceBetween = 2 * gridCellPaddingPx;
             let lengthPx = length * (gridCellLengthPx + spaceBetween) ;
