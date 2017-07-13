@@ -1,0 +1,95 @@
+@import "../transitions";
+
+$grid-cell-side-length: 15px;
+$grid-cell-padding: 3px;
+.grid-size-picker {
+    input {
+        padding-left: 8px;
+        padding-right: 8px;
+        border: 1px solid #dadada;
+        height: 30px;
+        width: 380px;
+    }
+
+    table {
+        z-index: 1;
+        position: absolute;
+        background-color: white;
+        outline: 1px solid #dadada;
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.04);
+
+        td {
+            width: $grid-cell-side-length;
+            height: $grid-cell-side-length;
+            padding: $grid-cell-padding;
+
+            div {
+                outline: 1px solid #AAAAAA;
+                width: 100%;
+                height: 100%;
+            }
+
+            &.disabled div {
+                background-color: #FFCCCC;
+            }
+
+            &.highlight{
+                &:not(.disabled) {
+                    div {
+                        cursor: pointer;
+                    }
+                }
+            } 
+
+        }
+    }
+
+    .table-container {        
+        &.hide {
+            display: none;
+        }
+        position: relative;
+    }
+}
+
+.grid-size-picker:not(.preview-box) {
+    table {
+        td {
+            &.highlight {
+                div {
+                    outline: 1px solid #0078d7;
+                    border: 1px solid #e6f1fb;
+                    box-sizing: border-box;
+                }
+            }
+        }
+    }
+}
+
+.grid-size-picker.preview-box {    
+    .preview {            
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        outline: 1px solid #0078d7;
+        background: rgba(230,241,251, 0.5);
+        box-sizing: border-box;
+        pointer-events: none;
+        transition: width $transition-function, height $transition-function;
+    }
+    table {
+        td {
+            &:hover { 
+                div {            
+                    outline: 1px solid #ef4810;
+                    border: 1px solid #ffe294;
+                    box-sizing: border-box;
+                }
+            }
+            &.disabled div {
+                display: none;
+            }
+        }
+    }
+}

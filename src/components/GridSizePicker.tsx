@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Size } from "../models/Size";
 
-import "./ResizeConfig.scss";
+import "./GridSizePicker.scss";
 
 export interface Props {
     validSizes: Size[];
