@@ -119,10 +119,13 @@ export class GridSizePicker extends React.Component<Props, State> {
             previewElement = <div className="preview" style={previewStyle}></div>;
         }
 
+        // Somewhere deep in the code we mixed up width and height... reversing it here 
+        let sizeAsStringWxH = `${size.height}x${size.width}`;
+
         return (
             <div className={className}>
                 <input
-                    value={ sizeAsString }
+                    value={ sizeAsStringWxH }
                     onClick={(ev) => {
                         this.setState({ value: this.state.value, showTable: !this.state.showTable });
                         (ev.target as any).blur();
