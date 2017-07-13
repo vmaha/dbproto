@@ -32,6 +32,27 @@
     }
     &.loading {
         background-color: white;
+
+        .loading-name {
+            display: block;
+            font-family: "Segoe UI";
+            font-size: 16px;
+            margin: 12px 15px;
+        }
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -50px 0 0 -50px;
+
+            width: 100px;
+            height: 100px;
+
+            &.shift-for-title {
+                margin: -38px 0 0 -50px;
+            }
+        }
     }
     .ms-Spinner {
         @include center-xy();
@@ -64,5 +85,9 @@
                 margin: 3px; 
             }
         }
+    }
+
+    .loading-name {
+        display: none;
     }
 }

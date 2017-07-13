@@ -10,27 +10,32 @@ import "./Widget.scss";
 import "file-loader!../assets/widget-hover-ellipsis-kanban.png";
 import "file-loader!../assets/widget-hover-view-full-screen-kanban.png";
 
-export interface Props {
-    height: number,
-    width: number,
-    left: number,
-    top: number,
-    showLightbox?: boolean,
-    pretendToLoad?: boolean,
+
+export class WidgetProps {
+    height: number;
+    width: number;
+    left: number;
+    top: number;
+    showLightbox?: boolean;
+    pretendToLoad?: boolean;    
+    loadType?: WidgetLoadType;
+    buttonType?: WidgetButtonType;
+    loadingName?: string;
+    fixedLoadingImage: string;
 }
 
 export interface State {
     isLoading: boolean,
 }
 
-export class Widget extends React.Component<WidgetData, State> {
+export class Widget extends React.Component<WidgetProps, State> {
 
     private readonly cellLengthPx = 160;
     private readonly cellSpacingPx = 10;
     private readonly dashboardTopPx = 20;
     private readonly dashboardLeftPx = 25;   
 
-    constructor(props: Props) {
+    constructor(props: WidgetProps) {
         super(props);
         this.state = { isLoading : props.pretendToLoad };
     }
@@ -65,12 +70,24 @@ export class Widget extends React.Component<WidgetData, State> {
         let lightbox = (!this.props.showLightbox) ? null  : <Glyph name="bowtie-view-full-screen" />
 
         let loadingElement: JSX.Element = null;
+        let loadingName: JSX.Element = null;
 
         if (this.state.isLoading) {
             switch (this.props.loadType) {
                 case WidgetLoadType.Spinner:
                     loadingElement = <Spinner size={ SpinnerSize.large }/>;
                     break;
+                case WidgetLoadType.FixedImage:
+                    loadingElement = 
+                        <img
+                            className={this.props.loadingName ? "shift-for-title" : ""}
+                            src={this.props.fixedLoadingImage}
+                        />
+                    break;
+            }
+
+            if (this.props.loadingName) {
+                loadingName = <span className="loading-name">{this.props.loadingName}</span>
             }
         }
 
@@ -86,6 +103,7 @@ export class Widget extends React.Component<WidgetData, State> {
                     { lightbox }                    
                     <Glyph name="bowtie-ellipsis" />
                 </div>
+                { loadingName }
                 { loadingElement }
             </div>
         );

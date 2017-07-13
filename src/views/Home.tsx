@@ -33,8 +33,13 @@ export class Home extends React.Component<Props, State> {
                 <h2>Loading</h2>
                 <p>Loading animations could do with some 💙</p>
                 <Variant url="/loading/spinner" name="A" description="Using fabric spinner"/>
-                <Variant url="/loading/fixed-image" name="B" description="Using a small fixed image"/>
-                <Variant url="/loading/scaled-image" name="C" description="Using a scaled image"/>
+                <Variant url="/loading/spinner-with-name" name="B" description="Spinner and user given name"/>
+                <Variant url="/loading/spinner-with-catalog-name" name="C" description="Spinner and catalog name"/>
+                <Variant url="/loading/spinner-with-mixed-name" name="D" description="Spinner and user given name, or catalog name if title isn't configurable"/>
+                <Variant url="/loading/fixed-image" name="E" description="Using a small fixed image"/>
+                <Variant url="/loading/fixed-image-with-name" name="F" description="Fixed image and user given name"/>
+                <Variant url="/loading/fixed-image-with-catalog-name" name="G" description="Fixed image and catalog name"/>
+                <Variant url="/loading/fixed-image-with-mixed-name" name="H" description="Fixed image and user given name, or catalog name if title isn't configurable"/>
                 <h2>Resize</h2>
                 <p>🍔 Super size me! 🍟</p>
                 <Variant url="/resize/1" name="A" description="Original"/>

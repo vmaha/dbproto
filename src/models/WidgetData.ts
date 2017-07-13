@@ -10,4 +10,7 @@ export class WidgetData {
     pretendToLoad?: boolean;    
     loadType?: WidgetLoadType;
     buttonType?: WidgetButtonType;
+    name?: string;
+    type?: string;
+    fixedLoadingImage: string;
 }
