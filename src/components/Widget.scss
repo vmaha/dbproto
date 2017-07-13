@@ -125,7 +125,7 @@
         &.IbizaSuperThickOutline,
         &.IbizaNoOutline {
             .hover-commands {
-                width: 66%;
+                width: calc(100% - 60px);//66%;
 
                 &::before {
                     content: '';
