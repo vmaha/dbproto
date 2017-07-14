@@ -8,6 +8,7 @@ import { WidgetButtonType } from "../models/WidgetButtonType";
 export var Ellipsis = (props: RouteComponentProps<any>) => {
     
     let id = props.match.params.id as string;
+    let outlineColor = props.match.params.outlineColor as string;
 
     let parallelogramIndex = id.indexOf("-parallelogram");
     let useParallelogramForIbiza = false;
@@ -31,6 +32,7 @@ export var Ellipsis = (props: RouteComponentProps<any>) => {
     widgets.forEach(widget => {
         widget.buttonType = buttonType;
         widget.useParallelogramForIbiza = useParallelogramForIbiza;
+        widget.outlineColor = outlineColor;
     });
 
     return <Dashboard widgets={widgets} />;

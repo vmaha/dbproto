@@ -10,33 +10,18 @@ import "./Widget.scss";
 import "file-loader!../assets/widget-hover-ellipsis-kanban.png";
 import "file-loader!../assets/widget-hover-view-full-screen-kanban.png";
 
-
-export class WidgetProps {
-    height: number;
-    width: number;
-    left: number;
-    top: number;
-    showLightbox?: boolean;
-    pretendToLoad?: boolean;    
-    loadType?: WidgetLoadType;
-    buttonType?: WidgetButtonType;
-    loadingName?: string;
-    fixedLoadingImage: string;
-    useParallelogramForIbiza?: boolean;
-}
-
 export interface State {
     isLoading: boolean,
 }
 
-export class Widget extends React.Component<WidgetProps, State> {
+export class Widget extends React.Component<WidgetData, State> {
 
     private readonly cellLengthPx = 160;
     private readonly cellSpacingPx = 10;
     private readonly dashboardTopPx = 20;
     private readonly dashboardLeftPx = 25;   
 
-    constructor(props: WidgetProps) {
+    constructor(props: WidgetData) {
         super(props);
         this.state = { isLoading : props.pretendToLoad };
     }
@@ -65,7 +50,7 @@ export class Widget extends React.Component<WidgetProps, State> {
             top: topPx,
             left: leftPx,
             height: heightPx,
-            width: widthPx
+            width: widthPx,
         };
 
         let lightbox = (!this.props.showLightbox) ? null : <Glyph name="bowtie-view-full-screen" />
@@ -102,8 +87,14 @@ export class Widget extends React.Component<WidgetProps, State> {
             className += " parallelogram";
         }
 
+        let outlineStyle = {
+            backgroundColor: `#${this.props.outlineColor}`,
+        }
+
         return (
             <div className={ className } style={ style }>
+                <div className="outline" style={ outlineStyle }></div>
+                <img className="widget-mock-image" src={ this.props.backgroundImage }/>
                 <div className="hover-commands">
                     { lightbox }                    
                     <Glyph name="bowtie-ellipsis" />

@@ -11,7 +11,10 @@ export class WidgetData {
     loadType?: WidgetLoadType;
     buttonType?: WidgetButtonType;
     name?: string;
+    loadingName?: string;
     type?: string;
     fixedLoadingImage: string;
     useParallelogramForIbiza?: boolean;
+    backgroundImage: string;
+    outlineColor?: string;
 }

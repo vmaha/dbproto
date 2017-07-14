@@ -7,6 +7,7 @@
 
 .widget {
     $hover-commands-height: 24px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.04);
 
     position: absolute;
     //border: 1px dashed black;
@@ -60,19 +61,33 @@
         @include center-xy();
     }
 
-    &.Ibiza,
-    &.IbizaThickOutline,
-    &.IbizaSuperThickOutline,
-    &.IbizaNoOutline {
-        $outline-thickness: 2px;
-        &:hover {
-            outline: $outline-thickness solid #0078D7;
+    .widget-mock-image {
+        position: absolute;
+    }
+
+    @mixin widget-outline($outline-thickness) {
+        $outline-top-thickness: 24px;
+        &:hover {  
+            img {
+                border-radius: 3px;
+            }          
+            .outline {
+                border-radius: 3px;
+                box-shadow: 0 2px 6px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.04);
+                width: calc(100% + #{$outline-thickness} * 2);
+                height: calc(100% + #{$outline-thickness} + #{$outline-top-thickness});
+                position: absolute;
+                top: -$outline-top-thickness;
+                left: -$outline-thickness;
+            }
         }
-        .hover-commands {
-            background: #0078D7;
-            width: calc(100% + #{$outline-thickness} * 2);
+    }
+
+    &.Ibiza,
+    &.IbizaNoOutline {
+        .hover-commands {                        
             top:0;
-            transform: translate($outline-thickness, -100%);
+            transform: translate(0, -100%);
             text-align: right;
             .glyph {
                 color: white;
@@ -82,41 +97,13 @@
             }
         }
     }
-
-    &.IbizaThickOutline {
-        $outline-thickness: 4px;
-        &:hover {
-            outline-width: $outline-thickness;
-        }
-
-        .hover-commands {
-            width: calc(100% + #{$outline-thickness} * 2);
-            transform: translate($outline-thickness, -100%);
-        }
-    }
-
-    &.IbizaSuperThickOutline {
-        $outline-thickness: 6px;
-        &:hover {
-            outline-width: $outline-thickness;
-        }
-
-        .hover-commands {
-            width: calc(100% + #{$outline-thickness} * 2);
-            transform: translate($outline-thickness, -100%);
-        }
+    
+    &.Ibiza {
+        @include widget-outline(2px);
     }
 
     &.IbizaNoOutline {
-        $outline-thickness: 0;
-        &:hover {
-            outline-width: $outline-thickness;
-        }
-
-        .hover-commands {
-            width: 100%;
-            transform: translate($outline-thickness, -100%);
-        }
+        @include widget-outline(0px);
     }
 
     &.parallelogram {

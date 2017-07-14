@@ -1,16 +1,16 @@
 import * as React from "react";
 
 import { SampleData } from "../stores/SampleData";
-import { WidgetProps } from "../components/Widget";
 import { Header } from "../components/Header";
 import { Widget } from "../components/Widget";
 import { ResizeConfig } from "../components/ResizeConfig";
 
+import { WidgetData } from "../models/WidgetData";
+
 import "./Dashboard.scss";
 
-
 export interface Props {
-    widgets: WidgetProps[];
+    widgets: WidgetData[];
     useConfig?: boolean;
     resizeVariant?: string;
 }
@@ -26,7 +26,6 @@ export var Dashboard: React.StatelessComponent<Props> = (props: Props) => {
             <Header/>
             <main>
                 { config }
-                <img src="/src/assets/dashboard-01.png"/>
                 { widgetsElements }
                 { edit }
             </main>

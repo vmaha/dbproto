@@ -2,7 +2,6 @@ import * as React from "react";
 import { RouteComponentProps } from "react-router";
 
 import { Dashboard } from "../components/Dashboard";
-import { WidgetProps } from "../components/Widget";
 import { SampleData } from "../stores/SampleData";
 import { WidgetLoadType } from "../models/WidgetLoadType";
 
@@ -23,30 +22,21 @@ export var Loading = (props: RouteComponentProps<any>) => {
 
     if (loaderName.indexOf("with-name") >= 0) {
         widgetData.forEach(data => {
-            let widgetProps = data as WidgetProps;
-            widgetProps.loadingName = data.name;
+            data.loadingName = data.name;
         });
     }
 
     if (loaderName.indexOf("with-catalog-name") >= 0) {
         widgetData.forEach(data => {
-            let widgetProps = data as WidgetProps;
-            widgetProps.loadingName = data.type;
+            data.loadingName = data.type;
         });
     }
 
     if (loaderName.indexOf("with-mixed-name") >= 0) {
         widgetData.forEach(data => {
-            let widgetProps = data as WidgetProps;
-            widgetProps.loadingName = data.name ? data.name : data.type;
+            data.loadingName = data.name ? data.name : data.type;
         });
     }
     
     return <Dashboard widgets={widgetData} />;
 }
-
-
-
-
-
-
