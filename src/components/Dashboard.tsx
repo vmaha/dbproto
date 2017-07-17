@@ -25,9 +25,9 @@ export var Dashboard: React.StatelessComponent<Props> = (props: Props) => {
         <div>
             <Header/>
             <main>
-                { config }
                 { widgetsElements }
                 { edit }
+                { config }
             </main>
         </div>
     );
