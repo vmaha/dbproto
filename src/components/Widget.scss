@@ -67,12 +67,8 @@
 
     @mixin widget-outline($outline-thickness) {
         $outline-top-thickness: 24px;
-        &:hover {  
-            img {
-                border-radius: 3px;
-            }          
+        &:hover {
             .outline {
-                border-radius: 3px;
                 box-shadow: 0 2px 6px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.04);
                 width: calc(100% + #{$outline-thickness} * 2);
                 height: calc(100% + #{$outline-thickness} + #{$outline-top-thickness});
@@ -119,7 +115,6 @@
                     transform: skewX(-45deg);
                     transform-origin: bottom;
                     position: absolute;
-                    background-color: #0078D7;
                     width: $hover-commands-height;
                     height: $hover-commands-height;
                     left: -$hover-commands-height;

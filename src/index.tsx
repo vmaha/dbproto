@@ -17,7 +17,7 @@ render(
           <div>
             <ScrollToTop />
             <Route exact path="/" component={Home} />
-            <Route path="/ellipsis/:id/:outlineColor" component={ Ellipsis } />            
+            <Route path="/ellipsis/:id/:outlineColor?" component={ Ellipsis } />            
             <Route path="/loading/:loader" component={ Loading } />
             <Route path="/resize/:id" component={ Resize } />
           </div>

@@ -44,14 +44,14 @@ export class Home extends React.Component<Props, State> {
                 <p>Buttons that show up on widget hover collide with new widget elements</p>
                 <Variant url="/ellipsis/kanban" name="A1" description="Kanban board design" isArchived/>
                 <Variant url="/ellipsis/kanban-no-spaces" name="A2" description="Kanban board design + some polish"/>
-                <Variant url="/ellipsis/ibiza/0078D7" name="B1" description="Ibiza design"/>
-                <Variant url="/ellipsis/ibiza-thick-outline/0078D7" name="B2" description="Ibiza with thicker outline" isArchived/>
-                <Variant url="/ellipsis/ibiza-super-thick-outline/0078D7" name="B3" description="Ibiza with super thick outline" isArchived/>
-                <Variant url="/ellipsis/ibiza-no-outline/0078D7" name="B4" description="Ibiza with no outline"/>
-                <Variant url="/ellipsis/ibiza-parallelogram/0078D7" name="C1" description="Ibiza but with a tab-like look" isArchived/>
-                <Variant url="/ellipsis/ibiza-thick-outline-parallelogram/0078D7" name="C2" description="Ibiza but with a tab-like look and thicker outline" isArchived/>
-                <Variant url="/ellipsis/ibiza-super-thick-outline-parallelogram/0078D7" name="C3" description="Ibiza but with a tab-like look and super thick outline" isArchived/>
-                <Variant url="/ellipsis/ibiza-no-outline-parallelogram/0078D7" name="C4" description="Ibiza but with a tab-like look and no outline" isArchived/>
+                <Variant url="/ellipsis/ibiza/a6a6a6" name="B1" description="Ibiza design"/>
+                <Variant url="/ellipsis/ibiza-thick-outline/a6a6a6" name="B2" description="Ibiza with thicker outline" isArchived/>
+                <Variant url="/ellipsis/ibiza-super-thick-outline/a6a6a6" name="B3" description="Ibiza with super thick outline" isArchived/>
+                <Variant url="/ellipsis/ibiza-no-outline/a6a6a6" name="B4" description="Ibiza with no outline"/>
+                <Variant url="/ellipsis/ibiza-parallelogram/a6a6a6" name="C1" description="Ibiza but with a tab-like look" isArchived/>
+                <Variant url="/ellipsis/ibiza-thick-outline-parallelogram/a6a6a6" name="C2" description="Ibiza but with a tab-like look and thicker outline" isArchived/>
+                <Variant url="/ellipsis/ibiza-super-thick-outline-parallelogram/a6a6a6" name="C3" description="Ibiza but with a tab-like look and super thick outline" isArchived/>
+                <Variant url="/ellipsis/ibiza-no-outline-parallelogram/a6a6a6" name="C4" description="Ibiza but with a tab-like look and no outline" isArchived/>
                 <h2>Loading</h2>
                 <p>Loading animations could do with some 💙</p>
                 <Variant url="/loading/spinner" name="A1" description="Using fabric spinner"/>

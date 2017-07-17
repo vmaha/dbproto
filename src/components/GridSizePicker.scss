@@ -28,7 +28,6 @@ $grid-cell-padding: 2px;
                 width: 100%;
                 height: 100%;
                 background-color: white;
-                                
             }
 
             &.disabled div {
@@ -83,6 +82,45 @@ $grid-cell-padding: 2px;
     }
     table {
         td {
+        }
+    }
+}
+
+.grid-size-picker.notches {
+    table {
+        td {
+            position: relative;
+            div {                
+                outline: none;
+                background-color: transparent;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                height: 20%;
+                width: 20%;
+                border-bottom: 1px solid #888888;
+                border-right: 1px solid #888888;
+            }
+
+            &.disabled div {
+                outline: none;
+                background-color: transparent;
+                border:none;
+            }   
+        }
+    }
+}
+
+.grid-size-picker.invisitile {
+    table {
+        td {            
+            div {
+                outline: none;
+                background: transparent;
+            }
+
+            &.disabled div {
+            }   
         }
     }
 }

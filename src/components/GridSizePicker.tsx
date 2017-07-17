@@ -6,6 +6,7 @@ import "./GridSizePicker.scss";
 export interface Props {
     validSizes: Size[];
     usePreviewBox?: boolean;
+    useInivibleTiles?: boolean;
 }
 
 export interface State {
@@ -17,7 +18,7 @@ export interface State {
 export class GridSizePicker extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
-        this.state = { value: "1x1", showTable: false };
+        this.state = { value: this.sizeToString(this.props.validSizes[0]), showTable: false };        
     }
 
     private stringToSize(value: string): Size {
@@ -27,6 +28,28 @@ export class GridSizePicker extends React.Component<Props, State> {
             width: parseInt(parts[0]),
             height: parseInt(parts[1])
         };
+    }
+
+    private sizeToString(value: Size): string {
+        return `${value.width}x${value.height}`;
+    }
+
+
+    private getBestFit(value: Size) {
+        let bestFit = this.props.validSizes[0];
+        this.props.validSizes.forEach(validSize => {
+            let getArea = (size: Size) => {
+                return size.height * size.width;
+            };
+            if (getArea(validSize) > getArea(bestFit) &&
+                validSize.width <= value.width &&
+                validSize.height <= value.height
+                ) 
+            {
+                bestFit = validSize;
+            }
+        });
+        return bestFit;
     }
 
     public render() {
