@@ -91,10 +91,15 @@ export class Widget extends React.Component<WidgetData, State> {
             backgroundColor: `#${this.props.outlineColor}`,
         }
 
+        let widgetMockImageElement: JSX.Element = null;
+        if (!this.state.isLoading) {
+            widgetMockImageElement = <img className="widget-mock-image" src={ this.props.backgroundImage }/>
+        }
+
         return (
             <div className={ className } style={ style }>
                 <div className="outline" style={ outlineStyle }></div>
-                <img className="widget-mock-image" src={ this.props.backgroundImage }/>
+                { widgetMockImageElement }
                 <div className="hover-commands">
                     { lightbox }                    
                     <Glyph name="bowtie-ellipsis" />
