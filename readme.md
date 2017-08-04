@@ -1,7 +1,3 @@
-# Blog
-
-[In Progress] Website for my blog
-
 # Ops
 
 [![Build Status](https://travis-ci.org/vmaha/dbproto.svg?branch=master)](https://travis-ci.org/vmaha/dbproto)
